@@ -1,0 +1,75 @@
+body{
+  font-family: 'Play', sans-serif;
+}
+
+div[ng-app]{
+  position:absolute;
+  top:0;
+  left:0;
+  width: 8.5in !important;
+  height: 11in !important;
+  /*background-color:silver;*/
+  border-right:1px solid black;
+}
+
+.pane{
+  height:100%;
+   
+}
+
+.left{
+  padding-top:.25in;
+  border-right:5px solid #E6EEF5;
+  background-color:aliceblue;
+  box-shadow:10px 0 50px silver;
+}
+.right{
+  padding:20px 20px;
+}
+.skills{
+  font-size:2em;
+}
+.education{
+  font-size:2em;
+}
+.side-topic{
+  color: #4F5F6D;
+  font-weight:700;
+  margin:0 0 0 .2em;
+  text-transform:uppercase;
+  transform:rotate(-5deg)
+}
+
+.side-group{
+  padding:10px 10px 10px 10px;
+  margin-bottom:1em;
+}
+
+.side-group .sub-group{
+  padding-left: .35em;
+}
+.title{
+  font-size:.9em;
+  white-space:nowrap;
+}
+.sub-group span {
+  font-size:.85em
+}
+.thing1{
+  color: #000;
+}
+.thing2{
+  color: #7C93A7;
+}
+.thing3{
+  color: #4F5F6D;
+}
+.bullets{
+  margin-top:-1em;
+}
+.bullets h4{
+  margin-top:.75em;
+}
+.bullets li{
+  font-size:.75em;
+}
