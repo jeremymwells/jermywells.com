@@ -66,26 +66,13 @@ angular
         title: 'Associate Architect',
         bullets: [
           { point: 'Provided expertise in areas of web api and SPA development and design principles' },
-          { point: 'Worked with UPMC design team to create functional SPA prototypes for various design concepts' },
-          { point: 'Worked on a team, creating a custom Vidyo implementation in AngularJs', 
-            bullets: [
-              { point: 'Designed and implemented features and enhancements, ensuring code coverage and maintainability, adhering to SDLC practices' },
-              { point: 'Fixed bugs/defects.' },
-            ] 
-          },
-          { point: 'Worked on a project, enhancing UPMC\'s internal patient document platform', 
-            bullets: [
-              { point: 'Helped facilitate multi-tenancy in a large sharded MongoDB cluster' },
-              { point: 'Used Ruby on Rails, Active Record, Cucumber, Rspec, MySql, MongoDB, JavaScript, RabbitMQ' },
-            ] 
-          },
-          { point: 'Enhanced a Ruby on Rails web application intended to maximize healthcare billing potential', 
-            bullets: [
-              { point: 'Standardized JavaScript and front end concerns.' },
-              { point: 'Implemented precompiled, route-aware asset bundling' },
-              { point: 'Used Ruby on Rails, Active Record, Cucumber, Rspec, MySql, JavaScript' }
-            ] 
-          }          
+          { point: 'Worked with design teams to create functional SPA prototypes for various design concepts' },
+          { point: 'Worked to create a custom Vidyo implementation in AngularJs' }, 
+          { point: 'Designed and implemented features and enhancements, ensuring code coverage and maintainability, adhering to SDLC practices' },
+          { point: 'Fixed bugs/defects.' },           
+          { point: 'Helped facilitate multi-tenancy in a large sharded MongoDB cluster' },
+          { point: 'Standardized front end concerns.' },
+          { point: 'Used Ruby on Rails, Active Record, Cucumber, Rspec, MySql, JavaScript, MongoDB, RabbitMQ, Docker' }          
         ]
       },
       {
@@ -95,19 +82,11 @@ angular
         bullets: [
           { point: 'Provided expertise in areas of web api and SPA development and design principles' },
           { point: 'Instructed team on AngularJs' },
-          { point: 'Lead front end efforts on a federated mobile first membership application intended to integrate disparate applications data and act as the system of record'}, 
-          { point: 'Worked with product owners',
-            bullets: [
-              { point: 'Gathered software requirements' },
-              { point: 'Created documentation' },
-            ] 
-          },
-          { point: 'Maintained and enhanced production applications', 
-            bullets: [
-              { point: 'Designed and implemented features and enhancements' },
-              { point: 'Fixed bugs' },
-            ] 
-          },
+          { point: 'Led front end efforts on a federated mobile-first membership application intended to integrate disparate applications data and act as the system of record'}, 
+          { point: 'Worked with product owners, gathered software requirements, created documentation' },
+          { point: 'Maintained and enhanced production applications' }, 
+          { point: 'Designed and implemented features and enhancements' },
+          { point: 'Fixed bugs' },
           { point: 'Used Linq-To-Sql and Entity Framework as data access framework/ORM' }
         ]
       },
@@ -116,31 +95,15 @@ angular
         company: 'All Covered', 
         title: 'Senior Technical Engineer',
         bullets: [
-          { point: 'Designed and Implemented Continuous Integration', 
-            bullets: [
-              { point:'TDD plan and strategy for new and existing code'},
-              { point:'Deployable artifact creation and versioning'}
-            ]
-          },
-          { point: 'Implemented SDLC and Agile processes in distributed team environments',
-            bullets: [
-              { point:'Facilitated planning, scrums, software implementation, buy-in, adherence' }
-            ]
-          },
+          { point: 'Designed and Implemented Continuous Integration plan and strategy for new and existing code' }, 
+          { point: 'Designed and Implemented deployable artifact creation and versioning'},
+          { point: 'Implemented SDLC and Agile processes in distributed team environments' },
+          { point: 'Facilitated planning, scrums, software implementation, buy-in, adherence' },
           { point: 'Implemented coding standards' },
-          { point: 'Worked with business process owners', 
-            bullets: [
-              { point: 'Gathered requirements' },
-              { point: 'Created documentation' },
-            ] 
-          },
-          { point: 'Enhanced a Ruby on Rails web application intended to maximize healthcare billing potential', 
-            bullets: [
-              { point: 'Standardized JavaScript and front end concerns.' },
-              { point: 'Implemented precompiled, route-aware asset bundling' },
-              { point: 'Used Ruby on Rails, Active Record, Cucumber, Rspec, MySql, JavaScript' }
-            ] 
-          }          
+          { point: 'Worked with product owners, gathered software requirements, created documentation' },
+          { point: 'Standardized JavaScript and front end concerns.' },
+          { point: 'Implemented precompiled, route-aware asset bundling' },
+          { point: 'Used Ruby on Rails, Active Record, Cucumber, Rspec, MySql, JavaScript' }
         ]
       },
       
@@ -150,11 +113,7 @@ angular
         title: 'Developer',
         bullets: [
           { point: 'Responsible for full stack application development using C#, XML, SOAP, WCF, ASP.NET, JQuery, AJAX, and SQL Server'},
-          { point: 'Led all ESB layer and integrations development efforts',
-            bullets: [
-              { point:'Was first nationally to integrate with Ford Motor Company\'s push interface' }
-            ]
-          },
+          { point: 'Led all ESB layer and integrations development efforts' },
           { point: 'Used Fluent NHibernate as a data access framework/ORM' },
           { point: 'Used knowledge of RESTful services, C#, MQ and WMB to implement workflows and WCF ' +
                    'services which facilitated ESB communication between proprietary 2nd and 3rd party ' +

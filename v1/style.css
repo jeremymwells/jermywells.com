@@ -1,15 +1,29 @@
 body{
   font-family: 'Play', sans-serif;
+  
+}
+.remainder{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:8.5in;
+  z-index:0;
+  background:linear-gradient(to right, white, black);
 }
 
 div[ng-app]{
   position:absolute;
+  z-index: 1;
   top:0;
   left:0;
   width: 8.5in !important;
   height: 11in !important;
-  /*background-color:silver;*/
-  border-right:1px solid black;
+}
+@media print {
+    .right {
+        background-color: white;
+    }
 }
 
 .pane{
@@ -20,14 +34,15 @@ div[ng-app]{
 .left{
   padding-top:.25in;
   border-right:5px solid #E6EEF5;
-  background-color:aliceblue;
+  background-color: aliceblue;
   box-shadow:10px 0 50px silver;
 }
 .right{
-  padding:20px 20px;
+  padding:0 10px 10px 10px;
 }
 .skills{
   font-size:2em;
+  margin-top:-.4em !important;
 }
 .education{
   font-size:2em;
@@ -65,11 +80,15 @@ div[ng-app]{
   color: #4F5F6D;
 }
 .bullets{
-  margin-top:-1em;
-}
-.bullets h4{
-  margin-top:.75em;
+  margin:-1em 0 0 0;
 }
 .bullets li{
-  font-size:.75em;
+  line-height:70%;
+}
+li span{
+  font-size:.65em;
+}
+h4 i{
+  font-size: .75em;
+  margin: 0 0 0 1em;
 }
