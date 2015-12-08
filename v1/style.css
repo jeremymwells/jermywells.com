@@ -1,6 +1,5 @@
 body{
   font-family: 'Play', sans-serif;
-  
 }
 .remainder{
   position:fixed;
@@ -30,12 +29,39 @@ div[ng-app]{
   height:100%;
    
 }
+.left-margin{
+  padding-right:25px;
+  color:#4F5F6D;
+  background-color:aliceblue;
+}
 
+.left-margin ul{
+  transform:rotate(90deg);
+  margin: 5px 0 0 5px;
+  white-space:nowrap;
+  list-style-type: none;
+  position:fixed; 
+  left:-3in; 
+  top: 3in;
+}
+.left-margin ul li{
+  display:inline;
+  margin:0 10px 0 0;
+  text-shadow:0px -5px 5px aliceblue;
+  
+}
+.left-margin ul li:first-child{
+  font-size:2em;
+  font-weight:700
+}
 .left{
   padding-top:.25in;
+  padding-left:.4in;
   border-right:5px solid #E6EEF5;
-  background-color: aliceblue;
-  box-shadow:10px 0 50px silver;
+  /*background-color: aliceblue;*/
+  background:linear-gradient(to right,#BCDAF5,  
+    aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue);
+  box-shadow:10px 0 60px -10px silver;
 }
 .right{
   padding:0 10px 10px 10px;

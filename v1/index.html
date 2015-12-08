@@ -18,33 +18,41 @@
 	<body>
 				
 		<div ng-app="resume" ng-controller="mainCtrl as m">
-
-			<div layout="row" class="pane">
-
-				<div flex="30" layout="column" class="left">
+  
+  <div class="left-margin">
+    <ul>
+      <li>Jeremy Wells</li>
+      <li>(724) 709-0495 </li>
+      <li>jmw.jeremymwells@gmail.com </li>
+    </ul>
+  </div>
+  
+			  <div layout="row" class="pane">
+    
+				    <div flex="35" layout="column" class="left">
 				
-					<div class="side-topic side-top skills">skills</div>
+					      <div class="side-topic side-top skills">
+        skills
+      </div>
+      <div class="side-group">
+         <span ng-repeat="tech in m.techs track by $index" class="{{m.classes[$index]}}">
+           {{tech + (!$last ? ', ' : '') }}
+         </span>
+      </div>
 					
-					<div class="side-group">
-						<span ng-repeat="tech in m.techs track by $index" class="{{m.classes[$index]}}">
-						{{tech + (!$last ? ', ' : '') }}
-						</span>
-				
-					</div>
+					      <div class="side-topic side-top education">Education</div>
 					
-					<div class="side-topic side-top education">Education</div>
+					      <div class="side-group">
+						        <div ng-repeat="(school,degrees) in m.education">
+						          <div ng-bind="school"></div>
+						          <div class="sub-group thing3" ng-repeat="degree in degrees">
+             <span class="thing2">{{degree.year}}</span>
+							            <span>{{degree.desc}}</span>
+						          </div>
+						        </div>
+					      </div>
 					
-					<div class="side-group">
-						<div ng-repeat="(school,degrees) in m.education">
-						<div ng-bind="school"></div>
-						<div class="sub-group thing3" ng-repeat="degree in degrees">
-							<span class="thing2">{{degree.year}}</span>
-							<span>{{degree.desc}}</span>
-						</div>
-						</div>
-					</div>
-					
-					<div class="side-topic side-top education">Extra</div>
+					      <div class="side-topic side-top education">Extra</div>
 					
 					<div class="side-group">
 						<div ng-repeat="(meetup, roles) in m.meetups">
@@ -57,10 +65,10 @@
 					</div>
 				</div>
 
-				<div flex class="right">
+				<div flex="65" class="right">
 					<div ng-repeat="job in m.experience">
 						<div layout="row" ng-class="{bullets:!$first}">
-							<h4 flex="70">
+							<h4 flex="65">
 								{{job.company}}<br />
 								<i>{{job.title}}</i>
 							</h4>
