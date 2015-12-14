@@ -40,6 +40,8 @@ angular
   })
   .factory('meetups', function(){
     return {
+      '[github.com/jeremymwells]': [{timespan:'',name:''}],
+      '[codepen.io/jermywells]':[{timespan:'',name:''}],
       '[ngPittsburgh.com]': [ 
         { timespan:'08/2014-present', name: '(Co)Organizer' },
         { timespan:'10/2015', name: 'Speaker, Angular Material' },
