@@ -26,8 +26,8 @@ var example = (function() {
 
     function getMaterial(){
         return new THREE.MeshBasicMaterial({
-            color: 0xff0000,
-            wireframe: true
+            color: 0xff000,
+            wireframe: false
         });
     }
 

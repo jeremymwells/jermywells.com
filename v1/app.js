@@ -1,4 +1,3 @@
-
 angular
   .module('resume', ['ngMaterial'])
   .controller('mainCtrl', function($scope, techs, education, meetups, experience) {
@@ -17,13 +16,13 @@ angular
   })
   .factory('techs',function(){
     return [
-      'C#','HTML','CSS','JQuery','JavaScript','AJAX','Windows', 'MQ', 'AJAX',
-      'OSX','Ubuntu','Fedora','AngularJs','Jasmine','Bootstrap', 'ESB', 'WCF',
-      'RxJS', 'Emacs', 'vsCode','ASP.NET', 'MVC', 'WebApi', 'WCF', 'WMB',
+      'NodeJS','AngularJs','HTML','CSS','JavaScript','AJAX',  'AJAX', 'Solr',
+      'OSX','Ubuntu','Fedora','JQuery','Jasmine','Bootstrap', 'ESB', 'WCF',
+      'RxJS', 'Emacs', 'vsCode','Windows','ASP.NET', 'MVC', 'WebApi', 'WCF', 'WMB',
       'MSSQL Server', 'MongoDB','TDD', 'BDD', 'jRuby', 'Docker', 'SOAP',
-      'Multi-tenant applications','ORM Frameworks', 'Go', 'Ruby on Rails', 
-      'Sass','Less','MySQL', 'NodeJS', 'npm', 'Grunt', 'Gulp', 'Yeoman', 
-      'Active Record', 'Cucumber', 'Rspec', 'RabbitMQ', 'Linq-To-Sql','Entity Framework'
+      'Multi-tenant applications','ORM Frameworks', 'Go',  
+      'Sass','Less','MySQL', 'C#', 'npm', 'Grunt', 'Gulp', 'Yeoman', 
+      'RabbitMQ', 'MQ', 'Linq-To-Sql', 'Entity Framework'
     ];
   })
   .factory('education', function(){
@@ -40,8 +39,8 @@ angular
   })
   .factory('meetups', function(){
     return {
-      '[github.com/jeremymwells]': [{timespan:'',name:''}],
-      '[codepen.io/jermywells]':[{timespan:'',name:''}],
+      '[github.com/jeremymwells]': [  { timespan:'', name: '' } ],
+      '[codepen.io/jermywells]':[  { timespan:'', name: '' } ],
       '[ngPittsburgh.com]': [ 
         { timespan:'08/2014-present', name: '(Co)Organizer' },
         { timespan:'10/2015', name: 'Speaker, Angular Material' },
@@ -62,8 +61,16 @@ angular
   })
   .factory('experience', function(){
     return [
+       {
+        timespan: 'February 2016 - Present', 
+        company: 'Arcadia Healthcare Solutions', 
+        title: 'Senior Software Engineer',
+        bullets: [
+          { point: 'Ruby on Rails, Active Record, AngularJS, CoffeeScript' }          
+        ]
+      },
       {
-        timespan: 'June 2014 - present', 
+        timespan: 'June 2014 - February 2016', 
         company: 'Computer Enterprises, Inc (CEI)', 
         title: 'Associate Architect',
         bullets: [
@@ -128,7 +135,7 @@ angular
         ]
       },
       {
-        timespan: 'April 2009 - April 2011', 
+        timespan: 'April 2009 - March 2011', 
         company: 'ServiceLink (FNF)', 
         title: 'Infrastructure Architect',
         bullets: [
