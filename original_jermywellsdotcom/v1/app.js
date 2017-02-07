@@ -1,5 +1,5 @@
 angular
-  .module('resume', ['ngMaterial'])
+  .module('resume', ['ngMaterial', 'ngSanitize'])
   .controller('mainCtrl', function($scope, techs, education, meetups, experience) {
     this.techs = techs;
     this.education = education;
@@ -16,13 +16,13 @@ angular
   })
   .factory('techs',function(){
     return [
-      'NodeJS','AngularJs','HTML','CSS','JavaScript','AJAX',  'AJAX', 'Solr',
-      'OSX','Ubuntu','Fedora','JQuery','Jasmine','Bootstrap', 'ESB', 'WCF',
-      'RxJS', 'Emacs', 'vsCode','Windows','ASP.NET', 'MVC', 'WebApi', 'WCF', 'WMB',
+      'NodeJS','Express','RxJS','Angular','AngularJS','Ngrx','HTML','CSS, Sass, Less, Flexbox','JavaScript','Solr',
+      'Material Design','Human Centered Design','SQL Server','MySQL','C#','Docker','Continuous Integration','Continuous Deployment',
+      'OSX','Ubuntu','Jasmine','Ruby On Rails','RESTful api design',
+      'Windows','ASP.NET','WebApi', 'WMB','Azure AD','Azure B2C',
       'MSSQL Server', 'MongoDB','TDD', 'BDD', 'jRuby', 'Docker', 'SOAP',
-      'Multi-tenant applications','ORM Frameworks', 'Go',  
-      'Sass','Less','MySQL', 'C#', 'npm', 'Grunt', 'Gulp', 'Yeoman', 
-      'RabbitMQ', 'MQ', 'Linq-To-Sql', 'Entity Framework'
+      'Multi-tenant applications','ORM Frameworks', 'Go', 'Python',
+      'RabbitMQ','MQ','Linq-To-Sql','Entity Framework', 'MarkLogic'
     ];
   })
   .factory('education', function(){
@@ -41,13 +41,13 @@ angular
     return {
       '[github.com/jeremymwells]': [  { timespan:'', name: '' } ],
       '[codepen.io/jermywells]':[  { timespan:'', name: '' } ],
-      '[ngPittsburgh.com]': [ 
-        { timespan:'08/2014-present', name: '(Co)Organizer' },
+      '[ngPittsburgh meetup]': [ 
+        { timespan:'08/2014-present', name: 'Member' },
         { timespan:'10/2015', name: 'Speaker, Angular Material' },
         { timespan:'01/2016', name: 'Speaker, RxJS' }
       ],
-      '[PghDevUX.com]': [ 
-        { timespan:'10/2015-present', name: '(Co)Organizer' }
+      '[PghDevUX meetup]': [ 
+        { timespan:'10/2015-present', name: 'Member' }
       ],
       '[pghdotnet meetup]': [ 
         { timespan:'12/2012-present', name: 'Member' },
@@ -55,43 +55,98 @@ angular
         { timespan:'03/2014', name: 'Speaker, OOP in JS' }
       ],
       '[node.pgh meetup]': [ 
-        { timespan:'04/2014', name: 'Member' }
+        { timespan:'04/2014-present', name: 'Member' },
+        { timespan:'10/2011', name: 'Presenter, RxJS v5' }
+      ],
+      '[Angular CLI]': [ 
+        { timespan:'', name: 'Contributor' }
+      ],
+      '[RxJS v5]': [ 
+        { timespan:'', name: 'Contributor' }
       ]
     };
   })
   .factory('experience', function(){
     return [
-       {
-        timespan: 'February 2016 - Present', 
-        company: 'Arcadia Healthcare Solutions', 
-        title: 'Senior Software Engineer',
+      {
+        timespan: 'January 2018 - present', 
+        company: 'UPMC Enterprises', 
+        title: 'Software Engineer - Lead',
         bullets: [
-          { point: 'Ruby on Rails, Active Record, AngularJS, CoffeeScript' }          
+          { point: 'Led the front-end development effort' },
+          { point: 'Provided team expertise in areas of front-end and angular development, tooling and ci/cd' },
+          { point: 'Implemented features and enhancements, ensuring code coverage, maintainability, and adhering to SDLC practices' },
+          { point: 'Used NodeTS, Express, Flex Layout, Angular Material, Azure AD, Angular 5, AngularJS, JavaScript, TypeScript, Docker, Kubernetes' }          
         ]
       },
       {
-        timespan: 'June 2014 - February 2016', 
-        company: 'Computer Enterprises, Inc (CEI)', 
-        title: 'Associate Architect',
+        timespan: 'October 2017 - January 2018', 
+        company: 'Opus', 
+        title: 'Principle Software Engineer',
         bullets: [
-          { point: 'Provided expertise in areas of web api and SPA development and design principles' },
-          { point: 'Worked with design teams to create functional SPA prototypes for various design concepts' },
-          { point: 'Worked to create a custom Vidyo implementation in AngularJs' }, 
+          { point: 'Implemented file upload and question reordering features for a survey application using Angular 5 components, and an Ngrx data store connected to ASP.NET Web API and Entity Framework' },
+          { point: 'Researched BPMN, DMN, and FEEL' },
+          { point: 'Created a prototype that parsed FEEL, allowing users to write logical rules in Friendly Enough Expression Language, and execute model-based decisions on data contexts' },
+          { point: 'Used NodeTS, Angular 5, Ngrx, SQL Server, C#, Windows, Octopus, Docker' }          
+        ]
+      },
+      {
+        timespan: 'October 2017 - January 2018', 
+        company: 'This Dot', 
+        title: 'Software Engineer',
+        bullets: [
+          { point: 'Implemented reusable form components, validation components, and date calculation functionality in a loan origination application' },
+          { point: 'Used knowledge of mobile platforms to implement responsive experience' },
+          { point: 'Reduced unhandled errors' },
+          { point: 'Automated Docker build' },
+          { point: 'Used bash, Docker, Angular 5, Ngrx' }
+        ]
+      },
+      {
+        timespan: 'October 2016 - October 2017,<br />June 2014 - February 2016', 
+        company: 'Computer Enterprises, Inc (CEI)', 
+        title: 'Architect, Associate Architect',
+        bullets: [
+          { point: 'Provided expertise in areas of web api development, SPA development and design principles' },
+          { point: 'Implemented CI/CD workflows' },
+          { point: 'Implemented B2C Authentication and Authorization' },
+          { point: 'Worked with design teams to create functional SPA prototypes, for various design concepts' },
+          { point: 'Worked to create a custom Vidyo implementation in AngularJS' }, 
           { point: 'Designed and implemented features and enhancements, ensuring code coverage and maintainability, adhering to SDLC practices' },
           { point: 'Helped facilitate multi-tenancy in a large distributed application' },
           { point: 'Standardized front end concerns' },
           { point: 'Fixed bugs and defects' },
-          { point: 'Used Ruby on Rails, Active Record, Cucumber, Rspec, MySql, JavaScript, MongoDB, RabbitMQ, Docker, MongoDB, jRuby' }          
+          { point: 'Used C#, SQL Server, Ruby on Rails, Active Record, AngularJS (v1 & v2), Cucumber, Rspec, MySql, JavaScript, MongoDB, RabbitMQ, Docker, jRuby' }          
         ]
       },
       {
+        timespan: 'May 2016 - October 2016', 
+        company: 'Open Arc', 
+        title: 'Solutions Architect',
+        bullets: [
+          { point: 'Implemented user license activation feature for teen abstinance promotion software' },
+          { point: 'Implemented sentence and paragraph parsing for language translation software' },
+          { point: 'Developed internal sales support process' },
+          { point: 'Fixed bugs and defects' },
+          { point: 'Used Angular JS, Ionic, Ruby On Rails, ActiveRecord, Postgres' }          
+        ]
+      },
+       {
+        timespan: 'February 2016 - June 2016', 
+        company: 'Arcadia Healthcare Solutions', 
+        title: 'Senior Software Engineer',
+        bullets: [
+          { point: 'Worked on a healthcare provider network analytics application' },
+          { point: 'Provided expertise in areas of web api and SPA development and design principles' },
+          { point: 'Fixed bugs and defects' },
+          { point: 'Used Ruby on Rails, Active Record, AngularJS, CoffeeScript' }          
+        ]
+      },      
+      {
         timespan: 'March 2013 - June 2014', 
-        company: 'Amerinet via Beacon Hill Staffing', 
+        company: 'Beacon Hill Staffing', 
         title: 'Senior Applications Developer',
         bullets: [
-          { point: 'Provided expertise in areas of web api and SPA development and design principles' },
-          { point: 'Instructed team on AngularJs' },
-          { point: 'Led front end efforts on a federated mobile-first application, integrating disparate applications data'}, 
           { point: 'Worked with product owners, gathered software requirements, created documentation' },
           { point: 'Designed, implemented and maintained features and enhancements' },
           { point: 'Fixed bugs and defects' },
@@ -104,17 +159,16 @@ angular
         title: 'Senior Technical Engineer',
         bullets: [
           { point: 'Designed and implemented continuous integration plan and strategy for new and existing code' }, 
-          { point: 'Designed and implemented deployable artifact creation and versioning'},
+          { point: 'Designed and implemented deployable artifact creation and versioning' },
           { point: 'Implemented SDLC and agile processes in distributed team environments' },
           { point: 'Facilitated planning, scrums, software implementation, buy-in, adherence' },
-          { point: 'Implemented coding standards' },
+          { point: 'Implemented style standards' },
           { point: 'Worked with product owners, gathered software requirements, created documentation' },
-          { point: 'Standardized javascript and front end concerns.' },
+          { point: 'Standardized JavaScript and front-end concerns.' },
           { point: 'Implemented precompiled, route-aware asset bundling' },
           { point: 'Used C#, MVC, MSSql, Entity Framework, SOAP, WCF, JavaScript, HTML, CSS, AJAX' }
         ]
       },
-      
       {
         timespan: 'March 2011 - March 2012', 
         company: 'Autosoft', 
@@ -139,15 +193,10 @@ angular
         company: 'ServiceLink (FNF)', 
         title: 'Infrastructure Architect',
         bullets: [
-          { point: 'Developed software on a task-force team that created flexible solutions to streamline efficiency' },
-          { point: 'Developed a SOA that promoted/demoted code between development, staging, and UAT' },
-          { point: 'Designed/Implemented C# applications and services to move, parse, analyze and combine meaningful log data across subnets' },
+          { point: 'Developed software that created flexible solutions' },
+          { point: 'Developed a web application allowing developers to interact with log data and other infrastructure concerns in real time' },
           { point: 'Helped implement AWSTATS/JAWSTATS analytics and GEOIP analysis' },
-          { point: 'Helped implement Nagios monitoring of 300+ servers and 600+ applications' },
-          { point: 'Developed/implemented an integral web app encorporating all aforementioned responsibilities of this position' }, 
-          { point: 'Provided support' },
-          { point: 'Personally coordinated all tech acquisition necessary to and set up satellite offices in Buffalo, New York and Rancho Cucamonga, California' },
-          { point: 'Handled nearly all technical aspects associated with launching technical operations in these locations' }
+          { point: 'Helped implement Nagios monitoring of 300+ servers and 600+ applications' }
         ]
       }
     ]

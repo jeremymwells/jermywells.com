@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-sanitize.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-messages.min.js"></script>
 		<script type="text/javascript" src="https://material.angularjs.org/0.11.0/angular-material.min.js"></script>
 		
@@ -18,42 +19,45 @@
 	<body>
 				
 		<div ng-app="resume" ng-controller="mainCtrl as m">
-  
-  <div class="left-margin">
-    <ul>
-      <li>Jeremy Wells</li>
-      <li>(724) 709-0495 </li>
-      <li>jmw.jeremymwells@gmail.com </li>
-    </ul>
-  </div>
-  
-			  <div layout="row" class="pane">
-    
-				    <div flex="35" layout="column" class="left">
+
+			<div class="name">
+				<div>
+					<h2>Jeremy Wells</h2>
+				</div>
+				<div>
+					(724) 709-0495
+					<br />
+					jmw.jeremymwells@gmail.com 
+				</div>
+			</div>
+
+			<div layout="row" class="pane">
+
+				<div flex="30" layout="column" class="left">
+			
+					<div class="side-topic side-top skills">
+						skills
+					</div>
+					<div class="side-group">
+						<span ng-repeat="tech in m.techs track by $index" class="{{m.classes[$index]}}">
+						{{ tech + (!$last ? ', ' : '') }}
+						</span>
+					</div>
 				
-					      <div class="side-topic side-top skills">
-        skills
-      </div>
-      <div class="side-group">
-         <span ng-repeat="tech in m.techs track by $index" class="{{m.classes[$index]}}">
-           {{tech + (!$last ? ', ' : '') }}
-         </span>
-      </div>
-					
-					      <div class="side-topic side-top education">Education</div>
-					
-					      <div class="side-group">
-						        <div ng-repeat="(school,degrees) in m.education">
-						          <div ng-bind="school"></div>
-						          <div class="sub-group thing3" ng-repeat="degree in degrees">
-             <span class="thing2">{{degree.year}}</span>
-							            <span>{{degree.desc}}</span>
-						          </div>
-						        </div>
-					      </div>
-					
-					      <div class="side-topic side-top education">Extra</div>
-					
+					<div class="side-topic side-top education">Education</div>
+				
+					<div class="side-group">
+						<div ng-repeat="(school,degrees) in m.education">
+							<div ng-bind="school"></div>
+							<div class="sub-group thing3" ng-repeat="degree in degrees">
+								<span class="thing2">{{degree.year}}</span>
+								<span>{{degree.desc}}</span>
+							</div>
+						</div>
+					</div>
+			
+					<div class="side-topic side-top education">Extra</div>
+				
 					<div class="side-group">
 						<div ng-repeat="(meetup, roles) in m.meetups">
 						<div class="" ng-bind="meetup"></div>
@@ -65,14 +69,14 @@
 					</div>
 				</div>
 
-				<div flex="65" class="right">
+				<div flex="70" class="right">
 					<div ng-repeat="job in m.experience">
 						<div layout="row" ng-class="{bullets:!$first}">
 							<h4 flex="65">
 								{{job.company}}<br />
 								<i>{{job.title}}</i>
 							</h4>
-							<h5 flex ng-bind="job.timespan"></h5>
+							<h5 flex ng-bind-html="job.timespan"></h5>
 						</div>
 						<ul class="bullets">
 							<li ng-repeat="bullet in job.bullets track by $index" ng-include="'jobBullet'"></li>
@@ -82,7 +86,7 @@
 
 			</div>
 			<script type="text/ng-template" id="jobBullet">
-				{{bullet.point}}
+				{{ bullet.point }}
 				<ul ng-if="bullet.bullets">
 					<li ng-repeat="bullet in bullet.bullets" ng-include="'jobBullet'"></li>
 				</ul>

@@ -1,89 +1,96 @@
-body{
+body {
   font-family: 'Play', sans-serif;
 }
-.remainder{
+
+.remainder {
   position:fixed;
   width:100%;
   height:100%;
   top:0;
   left:8.5in;
   z-index:0;
-  background:linear-gradient(to right, white, black);
+  /*background:linear-gradient(to right, white, black);*/
 }
 
-div[ng-app]{
+div[ng-app]  {
   position:absolute;
   z-index: 1;
   top:0;
   left:0;
   width: 8.5in !important;
   height: 11in !important;
+  padding-top:1.25em;
 }
+
 @media print {
     .right {
         background-color: white;
     }
 }
 
-.pane{
-  height:100%;
-   
-}
-.left-margin{
-  padding-right:25px;
-  color:#4F5F6D;
-  background-color:aliceblue;
+/* .pane {
+  height:100%; 
+} */
+
+.name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8.5in;
+  color: #4f5f6d;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #E6EEF5;
+  padding: 1em .5em 2em .5em;
+  height: 2em;
 }
 
-.left-margin ul{
-  transform:rotate(90deg);
-  margin: 5px 0 0 5px;
-  white-space:nowrap;
-  list-style-type: none;
-  position:fixed; 
-  left:-3in; 
-  top: 3in;
+.name div {
+  display: inline-block;
+  text-align: right;
+  width: 69%;
 }
-.left-margin ul li{
-  display:inline;
-  margin:0 10px 0 0;
-  text-shadow:0px -5px 5px aliceblue;
-  
+
+.name div:first-child {
+  width: 30% !important;
 }
-.left-margin ul li:first-child{
-  font-size:2em;
-  font-weight:700
+
+.name div:first-child h2 {
+  margin: 0 0 0 0;
+  letter-spacing: -5px;
+  font-size: 3em;
 }
+
 .left{
-  padding-top:.25in;
-  padding-left:.4in;
-  border-right:5px solid #E6EEF5;
-  /*background-color: aliceblue;*/
-  background:linear-gradient(to right,#BCDAF5,  
-    aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue);
-  box-shadow:10px 0 60px -10px silver;
+  padding: .75in 0 .4in .25in;
+  border-right:1px solid #E6EEF5;
+  background-color: #f9f9f9;
+  /* background:linear-gradient(to right,#BCDAF5, */
+  /* #f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9,#f9f9f9); */
+  /* aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue, aliceblue); */
+  /* box-shadow: 10px 0 60px -10px silver;  */
 }
 .right{
-  padding:0 10px 10px 10px;
+  padding:.5in 10px 10px 10px;
 }
 .skills{
-  font-size:2em;
+  font-size:1em;
   margin-top:-.4em !important;
 }
 .education{
-  font-size:2em;
+  font-size:1em;
 }
 .side-topic{
   color: #4F5F6D;
   font-weight:700;
   margin:0 0 0 .2em;
   text-transform:uppercase;
-  transform:rotate(-5deg)
+  /*transform:rotate(-5deg)*/
 }
 
 .side-group{
   padding:10px 10px 10px 10px;
   margin-bottom:1em;
+  font-size:.85em;
 }
 
 .side-group .sub-group{
@@ -98,12 +105,15 @@ div[ng-app]{
 }
 .thing1{
   color: #000;
+  font-size:.85em;
 }
 .thing2{
   color: #7C93A7;
+  font-size:.85em;
 }
 .thing3{
   color: #4F5F6D;
+  font-size:.85em;
 }
 .bullets{
   margin:-1em 0 0 0;
