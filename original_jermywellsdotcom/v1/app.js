@@ -16,9 +16,9 @@ angular
   })
   .factory('techs',function(){
     return [
-      'NodeJS','Express','RxJS','Angular','AngularJS','Ngrx','HTML','CSS, Sass, Less, Flexbox','JavaScript','Solr',
-      'Material Design','Human Centered Design','SQL Server','MySQL','C#','Docker','Continuous Integration','Continuous Deployment',
-      'OSX','Ubuntu','Jasmine','Ruby On Rails','RESTful api design',
+      'NodeJS','Express','RxJS','Angular','AngularJS','Ngrx','Ngxs', 'HTML','CSS, Sass, Less, Flexbox','JavaScript','Solr',
+      'Material Design', 'Angular Material Design', 'Human Centered Design','SQL Server','MySQL','C#','Docker','Continuous Integration','Continuous Delivery',
+      'Kubernetes', 'Docker', 'OSX','Ubuntu','Jasmine','Ruby On Rails','RESTful api design',
       'Windows','ASP.NET','WebApi', 'WMB','Azure AD','Azure B2C',
       'MSSQL Server', 'MongoDB','TDD', 'BDD', 'jRuby', 'Docker', 'SOAP',
       'Multi-tenant applications','ORM Frameworks', 'Go', 'Python',
@@ -71,12 +71,18 @@ angular
       {
         timespan: 'January 2018 - present', 
         company: 'UPMC Enterprises', 
-        title: 'Software Engineer - Lead',
+        title: 'Manager, Software Engineer - Lead',
         bullets: [
-          { point: 'Led the front-end development effort' },
-          { point: 'Provided team expertise in areas of front-end and angular development, tooling and ci/cd' },
-          { point: 'Implemented features and enhancements, ensuring code coverage, maintainability, and adhering to SDLC practices' },
-          { point: 'Used NodeTS, Express, Flex Layout, Angular Material, Azure AD, Angular 5, AngularJS, JavaScript, TypeScript, Docker, Kubernetes' }          
+          { point: 'Managed 12 people; 3 full-stack teams' },
+          { point: 'Led microservices server and web client implementations' },
+          { point: 'Implemented CICD pipelines using Kustomize and SSM to build web/microservice images and deploy to Kubernetes' },
+          { point: 'Measured effectiveness and efficiency using scrum agile process, and coached where necessary' },
+          { point: 'Coordinated Product and Engineering teams to create roadmap, estimate work, and execute strategic delivery' },
+          { point: 'Drove best practices implementing, documenting, and testing software' },
+          { point: 'Supported the MyUPMC application; a consumer-facing application with 15k+ daily users, multiple integrations and interoperability with multiple EMR\'s, Healthplan systems, and others' },
+          { point: 'Provided expertise in areas of front-end software development, tooling, etc' },
+          { point: 'Implemented features and enhancements, ensuring code coverage, maintainability, and adherence to accepted SDLC practices' },
+          { point: 'Used NodeJS, Express, Flex Layout, Angular Material, Azure AD, Angular (v1, v5, v7), JavaScript, TypeScript, Docker, Kubernetes, Spring Boot' }          
         ]
       },
       {
@@ -84,7 +90,7 @@ angular
         company: 'Opus', 
         title: 'Principle Software Engineer',
         bullets: [
-          { point: 'Implemented file upload and question reordering features for a survey application using Angular 5 components, and an Ngrx data store connected to ASP.NET Web API and Entity Framework' },
+          { point: 'Implemented file upload and question reordering features for a survey application using Angular 5 components, NGRX, and C# ASP.NET' },
           { point: 'Researched BPMN, DMN, and FEEL' },
           { point: 'Created a prototype that parsed FEEL, allowing users to write logical rules in Friendly Enough Expression Language, and execute model-based decisions on data contexts' },
           { point: 'Used NodeTS, Angular 5, Ngrx, SQL Server, C#, Windows, Octopus, Docker' }          
